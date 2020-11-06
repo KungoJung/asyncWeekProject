@@ -1,3 +1,8 @@
 h1 {
   text-decoration: underline;
 }
+
+.chart-container {
+  max-width: 80vw;
+  height: 600px;
+}

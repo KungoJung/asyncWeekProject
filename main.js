@@ -7,7 +7,7 @@ import "./public/style.css";
 
 ReactDOM.render(
   <Provider store={store}>
-    <h1>Hello, World!!!</h1>
+    <h1>Async Week Project: Covid Tracking With Victory.js</h1>
     <Routes />
   </Provider>,
   document.getElementById("app")
