@@ -1,5 +1,7 @@
 import React from "react";
 
+const fiftyStates = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NJ", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
+
 const Dropdown = (props) => {
   return(
     <div>
@@ -7,8 +9,11 @@ const Dropdown = (props) => {
         <label name="selectCw">
           <select onChange={props.handleChange} >
             <option defaultValue="Select State">Select State</option>
-            <option value={"CA"}>CA</option>
-            <option value={"NY"}>NY</option>
+            {fiftyStates.map(s => {
+              return(
+                <option value={s}>{s}</option>
+              )
+            })}
           </select>
         </label>
       </form>

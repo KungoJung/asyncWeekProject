@@ -1,5 +1,5 @@
 import React from "react";
-import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme, VictoryStack } from "victory";
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from "victory";
 
 const Chart = (props) => {
   const {data} = props
@@ -18,6 +18,9 @@ const Chart = (props) => {
             tickFormat={(x) => (`${x / 1000}k`)}
           />
           <VictoryBar
+            style={{
+              data: { fill: "#9CD08F" }
+            }}
             data={[
               {type: "Deaths", total: data.death},
               {type: "Cur Hosp", total: data.hospitalized},
@@ -26,6 +29,10 @@ const Chart = (props) => {
             ]}
             x="type"
             y="total"
+            labels={({ datum }) => {
+              const lab = datum.total ? `total: ${datum.total}` : "Not known"
+              return lab}
+            }
           />
         </VictoryChart>
     </div>
